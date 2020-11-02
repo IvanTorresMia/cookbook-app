@@ -48,47 +48,47 @@ module.exports = function(app) {
     }
   });
 
-// route to get all recipies, with their ingridients, joined together
-  app.get("/api/Recipie", function(req, res) {
-    db.Recipie.findAll({
-      include: [db.Ingridients]
-    }).then(function(dbRecipie) {
-      res.json(dbRecipie);
+// route to get all recipes, with their ingredients, joined together
+  app.get("/api/recipe", function(req, res) {
+    db.Recipe.findAll({
+      include: [db.Ingredients]
+    }).then(function(dbrecipe) {
+      res.json(dbrecipe);
     });
   });
 
-  // Route to get on recipie through the ID in the id parameter with ingridients joined
-  app.get("/api/Recipie/:id", function(req, res) {
+  // Route to get on recipe through the ID in the id parameter with ingredients joined
+  app.get("/api/recipe/:id", function(req, res) {
    
-    db.Recipie.findOne({
+    db.Recipe.findOne({
       where: {
         id: req.params.id
       },
-      include: [db.Ingridients]
-    }).then(function(dbRecipie) {
-      res.json(dbRecipie);
+      include: [db.Ingredients]
+    }).then(function(dbrecipe) {
+      res.json(dbrecipe);
     });
 
   });
 
-// route to create a recipie
-  app.post("/api/Recipie", function(req, res) {
+// route to create a recipe
+  app.post("/api/recipe", function(req, res) {
     console.log(req.body);
-    db.Recipie.create(req.body).then(function(dbRecipie) {
-      res.json(dbRecipie);
+    db.Recipe.create({title: req.body.title, UserId: req.body.id}).then(function(dbrecipe) {
+      res.json(dbrecipe);
     });
   });
 
-  // route to delete Recipie with rew.params id, when deleted it will delete all ingridients as well.
-  app.delete("/api/Recipie/:id", function(req, res) {
-    db.Recipie.destroy({
-      where: {
-        id: req.params.id
-      }
-    }).then(function(dbRecipie) {
-      res.json(dbRecipie);
-    });
-  });
+  // route to delete recipe with rew.params id, when deleted it will delete all ingredients as well.
+  // app.delete("/api/recipe/:id", function(req, res) {
+  //   db.recipe.destroy({
+  //     where: {
+  //       id: req.params.id
+  //     }
+  //   }).then(function(dbrecipe) {
+  //     res.json(dbrecipe);
+  //   });
+  // });
 
 
 // START OF INGRIDIENT ROUTES
@@ -96,34 +96,30 @@ module.exports = function(app) {
 
 // route to create new ingridient
 
-  app.post("/api/Ingridients", function(req, res) {
-    db.Ingridients.create(req.body).then(function(dbIngridients) {
-      res.json(dbIngridients);
+  app.post("/api/ingredients", function(req, res) {
+    db.Ingredients.create({title: req.body.title, body: req.body.body, RecipeId: req.body.id}).then(function(dbingredients) {
+      res.json(dbingredients);
     });
   });
 
-  // Incase we get to deleting specific ingridients this is the route
-  app.delete("/api/Ingridients/:id", function(req, res) {
-    db.Ingridients.destroy({
-      where: {
-        id: req.params.id
-      }
-    }).then(function(dbIngridients) {
-      res.json(dbIngridients);
-    });
-  });
+  // Incase we get to deleting specific ingredients this is the route
+  // app.get("/api/ingredients", function(req, res) {
+  //   db.ingredients.findAll(req.body).then(function(dbingredients) {
+  //     res.json(dbingredients);
+  //   });
+  // });
 
   // If we get to being able to update an ingridient. This is the route
-  app.put("/api/Ingridients", function(req, res) {
-    db.Ingridients.update(
-      req.body,
-      {
-        where: {
-          id: req.body.id
-        }
-      }).then(function(dbIngridients) {
-      res.json(dbIngridients);
-    });
-  });
+  // app.put("/api/ingredients", function(req, res) {
+  //   db.ingredients.update(
+  //     req.body,
+  //     {
+  //       where: {
+  //         id: req.body.id
+  //       }
+  //     }).then(function(dbingredients) {
+  //     res.json(dbingredients);
+  //   });
+  // });
 
 };

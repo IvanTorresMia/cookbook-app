@@ -15,15 +15,22 @@ $(document).ready(function() {
   // and updates the HTML on the page
 
 var startButton = $("#add");
-var ingridientButton = $("#add-ingridient");
+var ingredientButton = $("#add-ingredient");
 var viewAllButton = $("#view-all")
 var doneButton = $("#done-button")
-var ingridientContainer = $("#ingridient-container");
+var ingredientContainer = $("#ingredient-container");
 var startContainer = $("#start-container")
 var endContainer = $("#end-container");
-var recipieName = $(".recipie-input");
-var ingridientInput = $(".ingridient-input");
+var recipeName = $(".recipe-input");
+var ingredientInput = $(".ingredient-input");
 var instructionInput = $("#add-instruction");
+var addAnother = $("#add-another");
+var vewAllButton = $("#view-all");
+
+// hooks for viewAll
+var allRecipes = $("#all-recipes");
+var currentRecipes = $("#current-recipe")
+
 
 
 
@@ -36,30 +43,77 @@ var instructionInput = $("#add-instruction");
 
   $(startButton).on("click", function(event) {
     event.preventDefault();
-   console.log(recipieName.val())
+   console.log(recipeName.val());
 
-   ingridientContainer.attr("class", "none");
+   ingredientContainer.attr("class", "none");
    endContainer.attr("class", "hide");
    startContainer.attr("class", "hide");
 
+  //  Making a call to post. 
+   $.get("/api/user_data").then(function(data) {
+console.log(data.id)
+// This is to get user Id and pass it to the UserId foreign Key
+    var userId = data.id
+    $.post("/api/recipe", {title: recipeName.val(), id: userId}
+   
+   )
+  });
+
 
   })
 
-  $(ingridientButton).on("click", function(event) {
+  $(ingredientButton).on("click", function(event) {
     event.preventDefault();
-  console.log(ingridientInput.val())
-console.log(instructionInput.val())
+  console.log(ingredientInput.val())
+  console.log(instructionInput.val())
+  var recipeArr = [];
+  // Making a call to post 
+$.get("/api/recipe", function(data) {
+  var recipeId = data.length;
 
+  console.log(data.length)
 
+  $.post("/api/ingredients", {title: ingredientInput.val(),body: instructionInput.val(), id: recipeId})
 
-  })
+  });
+});
+
 
 $(doneButton).on("click", function(event){
   event.preventDefault();
-  ingridientContainer.attr("class", "hide");
+  ingredientContainer.attr("class", "hide");
   endContainer.attr("class", "none");
   startContainer.attr("class", "hide");
 
+})
+
+$(addAnother).on("click", function(event) {
+  event.preventDefault();
+
+  ingredientContainer.attr("class", "hide");
+  endContainer.attr("class", "hide");
+  startContainer.attr("class", "mone");
+
+
+
+
+})
+
+$(viewAllButton).on("click", function(event){
+  event.preventDefault();
+
+  window.location.href = "/viewAll";
+})
+
+
+
+// viewAll Code Starts here
+
+
+console.log("ivan")
+
+$.get("/api/recipe", function(data) {
+    console.log(data);
 })
 
 });
