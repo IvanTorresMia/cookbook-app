@@ -17,6 +17,14 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     }
+    // userName: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    //   unique: true,
+    //   validate: {
+    //     len: [1, 10]
+    //   }
+    // }
   });
 
   User.associate = function(models) {

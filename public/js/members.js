@@ -27,6 +27,11 @@ var instructionInput = $("#add-instruction");
 var addAnother = $("#add-another");
 var vewAllButton = $("#view-all");
 
+// hooks for viewAll
+var allRecipes = $("#all-recipes");
+var currentRecipes = $("#current-recipe")
+
+
 
 
 
@@ -98,6 +103,17 @@ $(viewAllButton).on("click", function(event){
   event.preventDefault();
 
   window.location.href = "/viewAll";
+})
+
+
+
+// viewAll Code Starts here
+
+
+console.log("ivan")
+
+$.get("/api/recipe", function(data) {
+    console.log(data);
 })
 
 });

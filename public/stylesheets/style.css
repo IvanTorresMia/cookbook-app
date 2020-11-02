@@ -12,6 +12,6 @@ html, body {
   width: 100%;
   margin: 0;
   padding: 0;
-background-image: url(https://image.freepik.com/free-photo/unfocused-room_1219-14.jpg?1);
+background-image: url(./assets/newBack.jpg);
+background-size: cover ;
 }
-
