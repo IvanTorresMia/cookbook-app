@@ -44,3 +44,7 @@ You will see that I have made but to explain it more.
 over all this is just a recipie book made by the user, that reaches all the requirements for the project. Hopefully we can still get an a haha. 
 
 anyways good work, and I'll see you tomorrow and help out as much as I can with this. 
+
+# The repo
+clone it and if you want start the branching process 
+

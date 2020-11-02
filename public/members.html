@@ -13,7 +13,7 @@
     <link href="stylesheets/style.css" rel="stylesheet" />
   </head>
 
-  <body>
+  <body src="pasta15_b291.jpg">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">Cook It Up</a>
       <button
@@ -41,7 +41,7 @@
             <a class="nav-link" href="/logout">Log Out</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/viewAll">View all Recipies</a>
+            <a class="nav-link" href="/viewAll">View all Recipes</a>
           </li>
         </ul>
       </div>
@@ -58,26 +58,29 @@
       <div class="card text-center" id="start-container">
         <div class="card-body">
           <h5 class="card-title">What are we making today?</h5>
-          <input type="text" class="recipie-input">
-          <button class="btn btn-primary" id="add">Add A reciepie</button>
+          <input type="text" class="recipe-input">
+          <button class="btn btn-primary" id="add">Add A recipe</button>
         </div>
       </div>
 
-      <!-- ingridient container -->
-      <div class="card text-center hide" id="ingridient-container">
+      <!-- ingredient container -->
+      <div class="card text-center hide" id="ingredient-container">
         <div class="card-body">
           <h5 class="card-title">
-            Add an ingridient and instruction, type "done" when finished.
+            Add an ingredient and instruction, type "done" when finished.
           </h5>
-          <input type="text" class="ingridient-input">
-          
-            <label for="instruction">Intruction</label>
+          <input type="text" class="ingredient-input">
+            <br>
+            <label for="instruction">Instructions</label>
             <textarea class="form-control" id="add-instruction" rows="3"></textarea>
-          <button class="btn btn-primary" id="add-ingridient">Add A ingridient</button>
+          <button class="btn btn-primary" id="add-ingredient">Add A ingredient</button>
           <button class="btn btn-primary" id="done-button">Done</button>
         </div>
       </div>
+      
+      <div class="card text-center hide" id="ingredient-list">
 
+      </div>
       <!-- final container -->
       <div
       class="card text-center hide"
@@ -87,14 +90,12 @@
       <div class="card-body">
         <h5 class="card-title">All Done!</h5>
         <p class="card-text">What do you want to do now?</p>
-        <button class="btn btn-primary" id="add">Add nother reciepie</button>
-        <button class="btn btn-primary" id="view-all">View all recipies</button>
+        <button class="btn btn-primary" id="add-another">Add nother recipe</button>
+        <button class="btn btn-primary" id="view-all">View all recipes</button>
         </div>
       </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/members.js"></script>
 
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
