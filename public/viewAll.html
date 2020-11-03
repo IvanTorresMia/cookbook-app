@@ -12,7 +12,6 @@
       integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
       crossorigin="anonymous"
     />
-
     <link href="stylesheets/style.css" rel="stylesheet" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   </head>
@@ -53,56 +52,34 @@
         </div>
       </nav>
     </header>
-  
-  
-
     <!-- add picture -->
-
     <div class="container">
-
       <div
         class="jumbotron jumbotron-fluid p-5 m-2"
         style="height: 250px; background-color:lightseagreen;"
         data-aos="fade-down"
       >
         <h1>Your Recipes</h1>
-
         <p>Treat your self to your own recipe!</p>
       </div>
-
-
-
       <div class="row card m-2">
         <div class="card text-center" id="start-container">
           <div class="card-body">
             <h5 class="card-title">Are we making a new recipe?</h5>
-            <a href="/members">
-            <button class="btn btn-secondary" id="add">Add A recipe</button>
-          </a>
+            <a href="/members" class="btn btn-secondary" id="addAnother">Add A recipe</a>
           </div>
         </div>
       </div>
-    
-
       <!-- id="all-recipes" -->
-
       <!-- id="current-recipe" -->
-     
       <div class="row m-2">
         <div class="col-md-6 overflow-auto text-center card b-6 rounded-sm" id="all-recipes" style="height: 350px;" data-aos="fade-up-right">
           <h2>All Recipes</h2>
         </div>
-
         <div class="col-md-6 overflow-auto text-center card b-6 rounded-sm" id="current-recipe" data-aos="fade-up-left">
-            
         </div>
-
       </div>
-
-
-
     </div>
-
     <script
       src="https://code.jquery.com/jquery-3.5.1.min.js"
     ></script>
