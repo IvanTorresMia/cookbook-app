@@ -1,50 +1,102 @@
-# cookbook-app
+# The UCB Cookbook
 
-Daniel what's up dude, it's 3 am ivan writing here. 
+## Deployment
 
-# before you run any code read this first
+GitHub: https://github.com/IvanTorresMia/cookbook-app
 
-# I appiligize in advance for how much reading this is haha
+Deployment: https://theucbcookbook.herokuapp.com/
 
-# What I've finished so far. 
+## Tech Used
 
-So I was able to make a skeleton front end for us, made most of the routes we need atleast to test and start out, created models, and I have written comments in every page to explain what is going on. Shouldn't be too hard to figure out but I wrote them just to be clear and all. 
+* HTML
+* BootStrap
+* AOS
+* JavaScript
+* JQuery
+* MySQL
+* Sequelize
+* Express
+* AJAX
+* Heroku
+* GitLab
+* GitHub
 
-# The index.js error
+## Usage
 
-So if you run code right now it will error out. 
-I figured out the problem but haven't found an answer.
+Have you ever wanted a digital cookbook that plays your own music playlist while you cook? Come and enjoy your own recipes and rhythms. We have created the app that will allow you to enjoy both! 
 
-- any time I add a new file to the model's folder it doesn't like it and it will tell you that there is an error in the index.js file. 
+The user is immediately presented with a login page that authenticates who is logging with with a standard email and password combination. When the user first logs in, they will be immediately directed to add their first recipes. When they opt to create their first recipe, they will be asked for their ingredients and instructions to create the recipe. After the recipe is completed, they will be given the option to add more recipes or review the ones already created by clicking on the recipe names.
 
-- this means that the error is not within the ingridients.js or the recipie.js, because before I wrote a line of code in eiter of the two files it would send the same error. 
+The recipes and ingredients are passed through respective models and will be applied to the user's login ID.
 
-- So therefor in order to run any code, remove the ingridients.js and the recipie.js file's out of that models directory BUT DON'T DELETE THEM, because those are actually good skeleton models for the project, feel free to edit them in any way you want though! But they look good to me haha
+```
+module.exports = function(sequelize, DataTypes) {
+var Ingredients = sequelize.define("Ingredients", {
+  title: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    validate: {
+      len: [1, 50]
+    }
+  },
+  
+  body: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+        len: [1, 255]
+      }
+});
+Ingredients.associate = function(models) {
+   
+    Ingredients.belongsTo(models.Recipe, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
+return Ingredients;
+}
 
-- if you find the solution to this before I do then amazing! but if not no worries I'll spend more time tomorrow working on it, im just about to die if I stay up any longer 
+```
 
-# config file
-
-So for now just run workbench on your local server to mess with it if you want, I can help deploy it to heroku and jawsdb later! 
-
-# ONCE runniing code what this app will actually do. 
-
-You will see that I have made but to explain it more. 
-
-- The user will be presented with a login page. 
-- Once Once logged in, they will be presented with a members page with a button and a nav bar. 
-- Once the user clicks, Add new recipie, then they will be presented with an ingridients container
-- once they are done they can click the done button
-- they will be presented with a container that gives them an option to add a new recipie or view all their recipies
-- if they click view all recipies, they will be sent to the 'viewAll.html" which has all of the their recipies (and if we get to it we can have other user's recipies displayed. 
-- We can add delete buttons to all the recipies for the option to "destroy" that recipie
+One API is intended to help design this page. Spotify is intended to give users a readily recognizable interface layout and use their already existing playlists, without having to go through the trouble of recreating new ones.
+[Spotify](https://www.icpsr.umich.edu/files/NACJD/ORIs/06oris.html)
 
 
-# Summary 
-over all this is just a recipie book made by the user, that reaches all the requirements for the project. Hopefully we can still get an a haha. 
+[AOS](https://animate.style/) was used to allow the logo image to drop in on the home page of the site. all we had to do was add 'animate_animated animate_bounceInDown' to the class of the image.
 
-anyways good work, and I'll see you tomorrow and help out as much as I can with this. 
 
-# The repo
-clone it and if you want start the branching process 
+<hr>
 
+## Future Development
+
+In future developments of this webpage, the site will be tied to the Spotify API to let you choose the mood before you start cooking. The site will also allow you to search recipes from other uses, if they decide to make them public.
+
+<hr>
+
+## Sources
+
+* [AOS](https://michalsnik.github.io/aos/)
+
+<hr>
+
+## MIT Lisence
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+<hr>
+<hr>
+
+## Authors
+
+Ivan Torres
+https://github.com/IvanTorresMia/
+
+Daniel Caudra
+
+https://github.com/DCuadra85
