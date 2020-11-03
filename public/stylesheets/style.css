@@ -15,3 +15,15 @@ html, body {
 background-image: url(./assets/newBack.jpg);
 background-size: cover ;
 }
+
+#navbarNav a {
+  color: gray;
+}
+
+#navbarNav a:hover {
+  color: black;
+}
+
+.bottom-line {
+  border-bottom: 2px solid #d6d0d0;
+}

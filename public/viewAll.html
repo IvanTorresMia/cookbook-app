@@ -2,12 +2,9 @@
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    <title>The Cook Book</title>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <title>The CookBook</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
@@ -19,48 +16,44 @@
     <link href="stylesheets/style.css" rel="stylesheet" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">The Cook Book</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="/members"
-              >Home <span class="sr-only">(current)</span></a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/aboutUs">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/viewAll">View all Recipes</a>
-          </li>
-          <li class="nav-item">
+    <header class="mb-5">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light bottom-line">
+        <a class="navbar-brand my-header p-3 text-muted relative" href="/members">The CookBook</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="/members"
+                >Home <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/aboutUs">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/viewAll">View all Recipes</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto pt-3">
+          <p class="nav-item">
             <a class="nav-link" href="/logout">Log Out</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-    <!-- <div class="row">
-      <div class="recipe-list col-md-3" id="recipetitle">
-        <ul class="recipe-well"></ul>
-      </div>
-    </div>
-
-    <div class="recipe-display col-md-9">
-      <div class="recipe-list col-md-3" id="recipeinstruction">
-        <ul class="recipe-block"> -->
+          </p>
+          </ul>
+        </div>
+      </nav>
+    </header>
+  
+  
 
     <!-- add picture -->
 
@@ -76,30 +69,35 @@
         <div class="card text-center" id="start-container">
           <div class="card-body">
             <h5 class="card-title">Are we making a new recipe?</h5>
+            <a href="/members">
             <button class="btn btn-primary" id="add">Add A recipe</button>
+          </a>
           </div>
         </div>
       </div>
 
-      <div class="d-flex justify-content-center">
-        <div class="col text-center" id="all-recipes">
-          <h2>Your Recipe</h2>
-   <!-- for every recipe create a recipe name container and a button -->
-          <div>
+
+      <!-- id="all-recipes" -->
+
+      <!-- id="current-recipe" -->
+     
+      <div class="row">
+        <div class="col-md-6 overflow-auto text-center" id="all-recipes">
+          <h2>All Recipes</h2>
         </div>
 
-        <div class="col text-center" id="current-recipe">
-          <h2>Current Recipe</h2>
-   <!-- If user click on recipe then append here -->
-          <div>
+        <div class="col-md-6 overflow-auto" id="current-recipe">
+            <!-- append shit here -->
         </div>
+
       </div>
+
+
+
     </div>
 
     <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
     ></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
@@ -109,3 +107,5 @@
     <script type="text/javascript" src="js/members.js"></script>
   </body>
 </html>
+<!-- integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous" -->
