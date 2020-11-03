@@ -60,10 +60,10 @@ return Ingredients;
 ```
 
 One API is intended to help design this page. Spotify is intended to give users a readily recognizable interface layout and use their already existing playlists, without having to go through the trouble of recreating new ones.
-[Spotify](https://www.icpsr.umich.edu/files/NACJD/ORIs/06oris.html)
+[Spotify](https://developer.spotify.com/)
 
 
-[AOS](https://animate.style/) was used to allow the logo image to drop in on the home page of the site. all we had to do was add 'animate_animated animate_bounceInDown' to the class of the image.
+[AOS](https://michalsnik.github.io/aos/) was used to animate the frames in the recipe list after you submit a recipe of your own. The frames dropping into the center is powered by AOS.
 
 
 <hr>
@@ -77,6 +77,7 @@ In future developments of this webpage, the site will be tied to the Spotify API
 ## Sources
 
 * [AOS](https://michalsnik.github.io/aos/)
+* [Bootstrap](https://www.bootstrapcdn.com/)
 
 <hr>
 
