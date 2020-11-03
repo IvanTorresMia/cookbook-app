@@ -33,9 +33,9 @@ $(document).ready(function () {
     event.preventDefault();
     console.log(recipeName.val());
 
-    ingredientContainer.attr("class", "none");
-    endContainer.attr("class", "hide");
-    startContainer.attr("class", "hide");
+    ingredientContainer.attr("class", "none card text-center border border-secondary ingredientCon");
+    endContainer.attr("class", "hide card text-center border border-secondary endCon");
+    startContainer.attr("class", "hide card text-center border border-secondary");
 
     //  Making a call to post.
     $.get("/api/user_data").then(function (data) {
@@ -66,17 +66,17 @@ $(document).ready(function () {
 
   $(doneButton).on("click", function (event) {
     event.preventDefault();
-    ingredientContainer.attr("class", "hide");
-    endContainer.attr("class", "none");
-    startContainer.attr("class", "hide");
+    ingredientContainer.attr("class", "hide card text-center border border-secondary ingredientCon");
+    endContainer.attr("class", "none card text-center border border-secondary");
+    startContainer.attr("class", "hide card text-center border border-secondary");
   });
 
   $(addAnother).on("click", function (event) {
     event.preventDefault();
 
-    ingredientContainer.attr("class", "hide");
-    endContainer.attr("class", "hide");
-    startContainer.attr("class", "mone");
+    ingredientContainer.attr("class", "hide card text-center border border-secondary ingredientCon");
+    endContainer.attr("class", "none card text-center border border-secondary endCon");
+    startContainer.attr("class", "hide card text-center border border-secondary");
   });
 
   // viewAll Code Starts here
