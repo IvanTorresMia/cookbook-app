@@ -10,7 +10,7 @@ var passport = require("./config/passport");
 
 // Setting up port and requiring models for syncing
 // Here we are giving a host to the app by either using the deployed site or the express local host 8080 site.
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 3000;
 
 // requiring models in order to sync the data base. 
 var db = require("./models");

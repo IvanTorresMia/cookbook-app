@@ -14,6 +14,7 @@
     />
 
     <link href="stylesheets/style.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   </head>
   <body>
     <header class="mb-5">
@@ -58,36 +59,42 @@
     <!-- add picture -->
 
     <div class="container">
+
       <div
-        class="jumbotron"
-        style="height: max-content; background-color: cadetblue"
+        class="jumbotron jumbotron-fluid p-5 m-2"
+        style="height: 250px; background-color:lightseagreen;"
+        data-aos="fade-down"
       >
         <h1>Your Recipes</h1>
+
         <p>Treat your self to your own recipe!</p>
       </div>
-      <div class="card">
+
+
+
+      <div class="row card m-2">
         <div class="card text-center" id="start-container">
           <div class="card-body">
             <h5 class="card-title">Are we making a new recipe?</h5>
             <a href="/members">
-            <button class="btn btn-primary" id="add">Add A recipe</button>
+            <button class="btn btn-secondary" id="add">Add A recipe</button>
           </a>
           </div>
         </div>
       </div>
-
+    
 
       <!-- id="all-recipes" -->
 
       <!-- id="current-recipe" -->
      
-      <div class="row">
-        <div class="col-md-6 overflow-auto text-center" id="all-recipes">
+      <div class="row m-2">
+        <div class="col-md-6 overflow-auto text-center card b-6 rounded-sm" id="all-recipes" style="height: 350px;" data-aos="fade-up-right">
           <h2>All Recipes</h2>
         </div>
 
-        <div class="col-md-6 overflow-auto" id="current-recipe">
-            <!-- append shit here -->
+        <div class="col-md-6 overflow-auto text-center card b-6 rounded-sm" id="current-recipe" data-aos="fade-up-left">
+            
         </div>
 
       </div>
@@ -105,6 +112,10 @@
       crossorigin="anonymous"
     ></script>
     <script type="text/javascript" src="js/members.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
 <!-- integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

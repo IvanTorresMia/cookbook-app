@@ -16,7 +16,7 @@
   "production": {
     "username": "root",
     "password": "tdwp2140694",
-    "database": "database_production",
+    "database": "xtri48rq2dggy754",
     "host": "127.0.0.1",
     "dialect": "mysql"
   }
