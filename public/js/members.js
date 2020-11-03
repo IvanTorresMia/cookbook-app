@@ -33,9 +33,18 @@ $(document).ready(function () {
     event.preventDefault();
     console.log(recipeName.val());
 
-    ingredientContainer.attr("class", "none card text-center border border-secondary ingredientCon");
-    endContainer.attr("class", "hide card text-center border border-secondary endCon");
-    startContainer.attr("class", "hide card text-center border border-secondary");
+    ingredientContainer.attr(
+      "class",
+      "none card text-center border border-secondary ingredientCon"
+    );
+    endContainer.attr(
+      "class",
+      "hide card text-center border border-secondary endCon"
+    );
+    startContainer.attr(
+      "class",
+      "hide card text-center border border-secondary"
+    );
 
     //  Making a call to post.
     $.get("/api/user_data").then(function (data) {
@@ -66,17 +75,32 @@ $(document).ready(function () {
 
   $(doneButton).on("click", function (event) {
     event.preventDefault();
-    ingredientContainer.attr("class", "hide card text-center border border-secondary ingredientCon");
+    ingredientContainer.attr(
+      "class",
+      "hide card text-center border border-secondary ingredientCon"
+    );
     endContainer.attr("class", "none card text-center border border-secondary");
-    startContainer.attr("class", "hide card text-center border border-secondary");
+    startContainer.attr(
+      "class",
+      "hide card text-center border border-secondary"
+    );
   });
 
   $(addAnother).on("click", function (event) {
     event.preventDefault();
 
-    ingredientContainer.attr("class", "hide card text-center border border-secondary ingredientCon");
-    endContainer.attr("class", "none card text-center border border-secondary endCon");
-    startContainer.attr("class", "hide card text-center border border-secondary");
+    ingredientContainer.attr(
+      "class",
+      "hide card text-center border border-secondary ingredientCon"
+    );
+    endContainer.attr(
+      "class",
+      "none card text-center border border-secondary endCon"
+    );
+    startContainer.attr(
+      "class",
+      "hide card text-center border border-secondary"
+    );
   });
 
   // viewAll Code Starts here
@@ -102,42 +126,39 @@ $(document).ready(function () {
 
         allRecipes.append(recipeCard);
       }
-
     });
   }
 
   appendButtons();
 
-$(document).on("click", ".currentR", function(event){
-event.preventDefault()
-$("#current-recipe").empty();
-var currentId = this.id;
-console.log(this.id);
+  $(document).on("click", ".currentR", function (event) {
+    event.preventDefault();
+    $("#current-recipe").empty();
+    var currentId = this.id;
+    console.log(this.id);
 
-$.get("/api/recipe/" + currentId, function(data){
-console.log(data)
+    $.get("/api/recipe/" + currentId, function (data) {
+      console.log(data);
 
-var allIngredients = "";
+      var allIngredients = "";
 
-for (i=0; i< data.Ingredients.length; i++){
-  allIngredients += "<p><strong>Ingredient: </strong>" + data.Ingredients[i].title + "</p>" + "<p>Instruction: " + data.Ingredients[i].body + "</p>"
-  
-}
+      for (i = 0; i < data.Ingredients.length; i++) {
+        allIngredients +=
+          "<p><strong>Ingredient: </strong>" +
+          data.Ingredients[i].title +
+          "</p>" +
+          "<p>Instruction: " +
+          data.Ingredients[i].body +
+          "</p>";
+      }
 
-var fullrecipe = 
-`
+      var fullrecipe = `
 <h3>${data.title}</h3>
 <div>${allIngredients}</div>
 
 `;
 
-$("#current-recipe").append(fullrecipe);
-})
-
-
-
-
-})
-
- 
+      $("#current-recipe").append(fullrecipe);
+    });
+  });
 });
